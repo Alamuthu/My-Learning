@@ -1,0 +1,15 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class UserService {
+
+  constructor(private http:HttpClient) { }
+
+  getUserList():Observable <any> {
+    return this.http.get(`https://zil-test.s3.us-east-1.amazonaws.com/json-data.json`)
+  }
+}
